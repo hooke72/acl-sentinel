@@ -26,7 +26,7 @@ const rules = require('./acl-rules');
 
 and after validation JTW token, please add some like that
 ```
-        if (!acl.isAllow(req,"v2",rules)){
+        if (!acl.isAllow(req,"v1",rules)){
             res.status(401).json({ message: 'Not authorized', status: false  });
             return;
         }
