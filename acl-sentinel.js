@@ -9,10 +9,10 @@ module.exports.isAllow = function (req,iss,rules) {
             // If direct route have no method then use "*" method
             const method = (rules[iss].allowed[route][req.method.toLowerCase()]) ? req.method.toLowerCase() : "*";
 
-            // if have no role for route and method then use "*" both
+            // if have no ruole for route and method then use "*" both
             const rule = (rules[iss].allowed[route][method]) ? (rules[iss].allowed[route][method]): (rules[iss].allowed["*"]["*"]);
 
-            // if have no role for * route and * method then unauthorized
+            // if have no rule for * route and * method then unauthorized
             if (!rule){return false}
 
             // Return true if in rule have one of role user
