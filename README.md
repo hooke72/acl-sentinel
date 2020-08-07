@@ -16,7 +16,7 @@ Simple and configurable ACL for Node.js with multi roles
                     userRole: ["admin", "user"]
                 };
 ```               
-Here is we save in JWT for userId access for rule version **v1** with roles **admin** or **user**.
+Here is we save in JWT for **userId** access for rule version **v1** with roles **admin** or **user**.
 
 2. In you auth middleware, please import
 ```
@@ -24,7 +24,7 @@ const acl = require('./acl');
 const rules = require('./acl-rules');
 ```
 
-and after validation JTW token? please add some like that
+and after validation JTW token, please add some like that
 ```
         if (!acl.isAllow(req,"v2",rules)){
             res.status(401).json({ message: 'Not authorized', status: false  });
